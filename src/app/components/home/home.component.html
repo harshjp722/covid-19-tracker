@@ -1,0 +1,61 @@
+<!-- Dummy Data Alert -->
+<div *ngIf="isDummyData" class="alert alert-warning">
+    <span>You are viewing Dummy data due to over usage of API!</span>
+</div>
+
+<!-- Covid-19 Summary -->
+<div *ngIf="trackerSummary" class="row d-flex card-container">
+    <div class="col-md-3 col-10 card">
+        <span>Total Confirmed: <b>{{trackerSummary.TotalConfirmed | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-10 card">
+        <span>Total Recovered: <b>{{trackerSummary.TotalRecovered | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-10 card">
+        <span>Total Deaths: <b>{{trackerSummary.TotalDeaths | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-10 card">
+        <span>New Confirmed: <b>{{trackerSummary.NewConfirmed | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-10 card">
+        <span>New Recovered: <b>{{trackerSummary.NewRecovered | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-10 card">
+        <span>New Deaths: <b>{{trackerSummary.NewDeaths | number:'.0'}}</b></span>
+    </div>
+</div>
+
+<!-- Report By Country -->
+<div *ngIf="trackerReport" class="table-responsive">
+    <table class="table table-striped" id="covid19Report">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" data-card-title>Country Name</th>
+                <th scope="col">Confirmed</th>
+                <th scope="col">Active</th>
+                <th scope="col">Recovered</th>
+                <th scope="col">Deaths</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let country of pagedItems; let i = index">
+                <th scope="row">{{country.rowNumber}}</th>
+                <td>{{country.Country}}</td>
+                <td class="text-warning"><b>{{country.TotalConfirmed | number:'.0'}}</b></td>
+                <td class="text-primary"><b>{{country.Active | number:'.0'}}</b></td>
+                <td class="text-success"><b>{{country.TotalRecovered | number:'.0'}}</b></td>
+                <td class="text-danger"><b>{{country.TotalDeaths | number:'.0'}}</b></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<nav aria-label="Covid-19 Report Pager">
+    <app-pagination [items]="trackerReport" (changePage)="onChangePage($event)"></app-pagination>
+</nav>

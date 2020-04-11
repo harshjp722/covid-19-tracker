@@ -1,0 +1,6 @@
+{
+    "apiBasePath": "https://api.covid19api.com/",
+    "initialPage": 1,
+    "recordsPerPage": 20,
+    "maxVisiblePages": 5
+}
