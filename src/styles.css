@@ -69,7 +69,7 @@
     margin-right: 8px;
   }
 
-  .card svg.material-icons path {
+  .cardCustom svg.material-icons path {
     fill: #888;
   }
 
@@ -80,7 +80,7 @@
     margin-top: 16px;
   }
 
-  .card {
+  .cardCustom {
     border-radius: 10px;
     border: 1px solid #eee;
     background-color: #fafafa;
@@ -96,29 +96,29 @@
     line-height: 24px;
   }
 
-  .card-container .card:not(:last-child) {
+  .card-container .cardCustom:not(:last-child) {
     margin-right: 0;
   }
 
-  .card.card-small {
+  .cardCustom.card-small {
     height: 16px;
     width: 168px;
   }
 
-  .card-container .card:not(.highlight-card) {
+  .card-container .cardCustom:not(.highlight-card) {
     cursor: pointer;
   }
 
-  .card-container .card:not(.highlight-card):hover {
+  .card-container .cardCustom:not(.highlight-card):hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
   }
 
-  .card-container .card:not(.highlight-card):hover .material-icons path {
+  .card-container .cardCustom:not(.highlight-card):hover .material-icons path {
     fill: rgb(105, 103, 103);
   }
 
-  .card.highlight-card {
+  .cardCustom.highlight-card {
     background-color: #1976d2;
     color: white;
     font-weight: 600;
@@ -128,7 +128,7 @@
     position: relative;
   }
 
-  .card.card.highlight-card span {
+  .cardCustom.cardCustom.highlight-card span {
     margin-left: 60px;
   }
 
@@ -266,12 +266,12 @@
       width: 100%;
     }
 
-    .card:not(.highlight-card) {
+    .cardCustom:not(.highlight-card) {
       /* height: 16px; */
       margin: 8px 0;
     }
 
-    .card.highlight-card span {
+    .cardCustom.highlight-card span {
       margin-left: 72px;
     }
 

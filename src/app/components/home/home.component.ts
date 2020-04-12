@@ -1,5 +1,6 @@
 import { HomeService } from './../../shared/services/home.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = 'Covid19-tracker';
   trackerSummary: any;
   trackerReport: any;
   trackerLastUpdated: any;
@@ -15,7 +15,10 @@ export class HomeComponent implements OnInit {
   startIndex = 0;
   isDummyData = false;
 
-  constructor(private homeService: HomeService) { }
+  constructor(
+    private homeService: HomeService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getSummaryData();
@@ -60,5 +63,9 @@ export class HomeComponent implements OnInit {
   onChangePage(pageOfItems) {
     // update current page of items
     this.pagedItems = pageOfItems;
+  }
+
+  viewCountryDetails(country) {
+    this.router.navigate(['country', country.Slug]);
   }
 }

@@ -5,27 +5,27 @@
 
 <!-- Covid-19 Summary -->
 <div *ngIf="trackerSummary" class="row d-flex card-container">
-    <div class="col-md-3 col-10 card">
+    <div class="col-md-3 col-10 cardCustom">
         <span>Total Confirmed: <b>{{trackerSummary.TotalConfirmed | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 card">
+    <div class="col-md-3 col-10 cardCustom">
         <span>Total Recovered: <b>{{trackerSummary.TotalRecovered | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 card">
+    <div class="col-md-3 col-10 cardCustom">
         <span>Total Deaths: <b>{{trackerSummary.TotalDeaths | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 card">
+    <div class="col-md-3 col-10 cardCustom">
         <span>New Confirmed: <b>{{trackerSummary.NewConfirmed | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 card">
+    <div class="col-md-3 col-10 cardCustom">
         <span>New Recovered: <b>{{trackerSummary.NewRecovered | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 card">
+    <div class="col-md-3 col-10 cardCustom">
         <span>New Deaths: <b>{{trackerSummary.NewDeaths | number:'.0'}}</b></span>
     </div>
 </div>
@@ -33,10 +33,10 @@
 <!-- Report By Country -->
 <div *ngIf="trackerReport" class="table-responsive">
     <table class="table table-striped" id="covid19Report">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col" data-card-title>Country Name</th>
+                <th scope="col" data-card-footer>Country Name</th>
                 <th scope="col">Confirmed</th>
                 <th scope="col">Active</th>
                 <th scope="col">Recovered</th>
@@ -44,8 +44,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let country of pagedItems; let i = index">
-                <th scope="row">{{country.rowNumber}}</th>
+            <tr *ngFor="let country of pagedItems; let i = index" style="cursor: pointer;"
+                (click)="viewCountryDetails(country)">
+                <td scope="row">{{country.rowNumber}}</td>
                 <td>{{country.Country}}</td>
                 <td class="text-warning"><b>{{country.TotalConfirmed | number:'.0'}}</b></td>
                 <td class="text-primary"><b>{{country.Active | number:'.0'}}</b></td>

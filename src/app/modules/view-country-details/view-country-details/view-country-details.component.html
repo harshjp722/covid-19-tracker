@@ -1,0 +1,38 @@
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['']">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{detailPage}}</li>
+    </ol>
+</nav>
+
+<!-- Dummy Data Alert -->
+<div *ngIf="isDummyData" class="alert alert-warning">
+    <span>You are viewing Dummy data due to over usage of API!</span>
+</div>
+
+<!-- Country Details -->
+<div *ngIf="countryDetails" class="table-responsive">
+    <table class="table table-striped" id="covid19Report">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" data-card-footer>Date</th>
+                <th scope="col">Confirmed</th>
+                <th scope="col">Active</th>
+                <th scope="col">Recovered</th>
+                <th scope="col">Deaths</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detail of countryDetails; let i = index">
+                <td scope="row">{{i+1}}</td>
+                <td>{{detail.Date | date}}</td>
+                <td class="text-warning"><b>{{detail.Confirmed | number:'.0'}}</b></td>
+                <td class="text-primary"><b>{{detail.Active | number:'.0'}}</b></td>
+                <td class="text-success"><b>{{detail.Recovered | number:'.0'}}</b></td>
+                <td class="text-danger"><b>{{detail.Deaths | number:'.0'}}</b></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -7,6 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'country/:slug',
+    loadChildren: () => import('./modules/view-country-details/view-country-details.module')
+      .then(m => m.ViewCountryDetailsModule)
   }
 ];
 
