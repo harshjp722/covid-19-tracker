@@ -4,29 +4,29 @@
 </div>
 
 <!-- Covid-19 Summary -->
-<div *ngIf="trackerSummary" class="row d-flex card-container">
-    <div class="col-md-3 col-10 cardCustom">
+<div *ngIf="trackerSummary" class="card-container">
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
         <span>Total Confirmed: <b>{{trackerSummary.TotalConfirmed | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 cardCustom">
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
         <span>Total Recovered: <b>{{trackerSummary.TotalRecovered | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 cardCustom">
-        <span>Total Deaths: <b>{{trackerSummary.TotalDeaths | number:'.0'}}</b></span>
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
+        <span>Total Deceased: <b>{{trackerSummary.TotalDeaths | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 cardCustom">
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
         <span>New Confirmed: <b>{{trackerSummary.NewConfirmed | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 cardCustom">
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
         <span>New Recovered: <b>{{trackerSummary.NewRecovered | number:'.0'}}</b></span>
     </div>
 
-    <div class="col-md-3 col-10 cardCustom">
-        <span>New Deaths: <b>{{trackerSummary.NewDeaths | number:'.0'}}</b></span>
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
+        <span>New Deceased: <b>{{trackerSummary.NewDeaths | number:'.0'}}</b></span>
     </div>
 </div>
 
@@ -36,11 +36,11 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col" data-card-footer>Country Name</th>
+                <th scope="col" data-card-footer>Country</th>
                 <th scope="col">Confirmed</th>
                 <th scope="col">Active</th>
                 <th scope="col">Recovered</th>
-                <th scope="col">Deaths</th>
+                <th scope="col">Deceased</th>
             </tr>
         </thead>
         <tbody>

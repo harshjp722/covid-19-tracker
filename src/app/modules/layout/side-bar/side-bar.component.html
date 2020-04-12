@@ -1,0 +1,8 @@
+<mat-toolbar class="toolbar">
+    <span>Covid-19 Tracker</span>
+</mat-toolbar>
+<mat-nav-list class="navigation-list">
+    <a (click)="navigate('/')" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="navigation-item" mat-list-item>Home</a>
+    <mat-divider class="navigation-divider"></mat-divider>
+    <a (click)="navigate('/india')" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="navigation-item" mat-list-item>India</a>
+</mat-nav-list>

@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'country/:slug',
     loadChildren: () => import('./modules/view-country-details/view-country-details.module')
       .then(m => m.ViewCountryDetailsModule)
+  },
+  {
+    path: 'india',
+    loadChildren: () => import('./modules/india/india.module')
+      .then(m => m.IndiaModule)
   }
 ];
 

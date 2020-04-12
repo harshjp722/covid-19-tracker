@@ -1,0 +1,13 @@
+.navigation-list {
+    min-width: 250px;
+}
+
+.navigation-list a:hover {
+    background-color: #1976d2;
+    color: #ffffff;
+}
+
+.navigation-list .active {
+    background-color: #1976d2;
+    color: #ffffff;
+}

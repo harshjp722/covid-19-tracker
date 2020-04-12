@@ -1,4 +1,4 @@
-import { ConfigService } from './../../shared/services/base/config.service';
+import { ConfigService } from '../../../shared/services/base/config.service';
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 
 @Component({

@@ -1,0 +1,42 @@
+<!-- Covid-19 Summary -->
+<div *ngIf="trackerSummary" class="card-container">
+    <div class="col-auto cardCustom bg-dark text-white">
+        <span>Confirmed: <b>{{trackerSummary.confirmed | number:'.0'}}</b></span>
+    </div>
+    <div class="col-auto cardCustom bg-primary text-white">
+        <span>Active: <b>{{trackerSummary.active | number:'.0'}}</b></span>
+    </div>
+    <div class="col-auto cardCustom bg-success text-white">
+        <span>Recovered: <b>{{trackerSummary.recovered | number:'.0'}}</b></span>
+    </div>
+    <div class="col-auto cardCustom bg-danger text-white">
+        <span>Deceased: <b>{{trackerSummary.deaths | number:'.0'}}</b></span>
+    </div>
+</div>
+
+<!-- Report By Country -->
+<div *ngIf="trackerReport" class="table-responsive">
+    <table class="table table-striped" id="covid19Report">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" data-card-footer>State</th>
+                <th scope="col">Confirmed</th>
+                <th scope="col">Active</th>
+                <th scope="col">Recovered</th>
+                <th scope="col">Deceased</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let state of trackerReport; let i = index" style="cursor: pointer;"
+                (click)="viewDetails(state)">
+                <td scope="row">{{i + 1}}</td>
+                <td>{{state.state}}</td>
+                <td class="text-warning"><b>{{state.confirmed | number:'.0'}}</b></td>
+                <td class="text-primary"><b>{{state.active | number:'.0'}}</b></td>
+                <td class="text-success"><b>{{state.recovered | number:'.0'}}</b></td>
+                <td class="text-danger"><b>{{state.deaths | number:'.0'}}</b></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

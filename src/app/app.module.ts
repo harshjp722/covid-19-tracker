@@ -1,3 +1,4 @@
+import { LayoutModule } from './modules/layout/layout.module';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -5,27 +6,25 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ConfigModule } from './shared/services/base/config.service';
 import { HttpClientModule } from '@angular/common/http';
-import { PaginationComponent } from './components/pagination/pagination.component';
+import { PaginationComponent } from './modules/utilities/pagination/pagination.component';
+import { UtilitiesModule } from './modules/utilities/utilities.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    PaginationComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule,
+    UtilitiesModule
   ],
   providers: [
     ConfigModule.init()
