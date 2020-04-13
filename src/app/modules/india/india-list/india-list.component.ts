@@ -21,13 +21,13 @@ export class IndiaListComponent implements OnInit {
     this.getIndiaData();
   }
 
-
   getIndiaData() {
     this.indiaService.getSummary().subscribe(res => {
       if (res && res.statewise) {
         this.trackerSummary = res.statewise.filter(f => f.statecode === 'TT')[0];
         this.trackerLastUpdated = this.trackerSummary.lastupdatedtime;
         this.trackerReport = res.statewise.filter(f => f.statecode !== 'TT');
+        this.trackerReport.sort((a, b) => a.confirmed - b.confirmed).reverse();
       }
     });
   }

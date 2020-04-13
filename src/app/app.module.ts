@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { ConfigModule } from './shared/services/base/config.service';
 import { HttpClientModule } from '@angular/common/http';
-import { PaginationComponent } from './modules/utilities/pagination/pagination.component';
 import { UtilitiesModule } from './modules/utilities/utilities.module';
 
 @NgModule({

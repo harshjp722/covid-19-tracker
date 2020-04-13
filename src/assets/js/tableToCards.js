@@ -99,7 +99,7 @@ function tableToCards() {
 		// Generate cards
 		var cards = [];
 		$(this).find("tbody tr").each(function() {
-			var cardTitle = $("<h5>").addClass("card-title");
+			var cardTitle = $("<h2>").addClass("card-title");
 			var cardSubtitles = [];
 			var cardText = $("<p>").addClass("card-text");
 			var cardFooters = $("<div>").addClass("card-footer text-muted");
@@ -166,7 +166,7 @@ function tableToCards() {
             if (cardFooters.html() === "") cardFooters = undefined;
 
 			cards.push(
-				$("<div>").addClass("card mb-3").append(
+				$("<div>").addClass("card mb-3").css("background-color", "rgba(0,0,0,.01)").append(
 					$("<div>").addClass("card-body")
 					.append(cardTitle)
 					.append(cardSubtitles)
