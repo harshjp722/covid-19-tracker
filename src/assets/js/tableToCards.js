@@ -144,9 +144,10 @@ function tableToCards() {
 				if (header.mergeModel === undefined) {
 					// Data field without merge
 					cardText.append(
-						$("<span>").append(
+						$("<div>").append(
 							$("<b>").html(header.name + ": ")
-						).append(td.innerHTML).append($("<br>"))
+						).append("<span class='float-right'>" + td.innerHTML + "</span>")
+						.append($("<br>"))
 					);
 				} else {
 					// Formatted data field

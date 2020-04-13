@@ -48,10 +48,10 @@
                 (click)="viewCountryDetails(country)">
                 <td scope="row">{{country.rowNumber}}</td>
                 <td><a routerLink="/country/{{country.Slug}}">{{country.Country}}</a></td>
-                <td class="text-warning"><b>{{country.TotalConfirmed | number:'.0'}}</b></td>
-                <td class="text-primary"><b>{{country.Active | number:'.0'}}</b></td>
-                <td class="text-success"><b>{{country.TotalRecovered | number:'.0'}}</b></td>
-                <td class="text-danger"><b>{{country.TotalDeaths | number:'.0'}}</b></td>
+                <td><b class="text-warning">{{country.TotalConfirmed | number:'.0'}}</b></td>
+                <td><b class="text-primary">{{country.Active | number:'.0'}}</b></td>
+                <td><b class="text-success">{{country.TotalRecovered | number:'.0'}}</b></td>
+                <td><b class="text-danger">{{country.TotalDeaths | number:'.0'}}</b></td>
             </tr>
         </tbody>
     </table>

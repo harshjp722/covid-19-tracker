@@ -32,10 +32,10 @@
                 (click)="viewDetails(state)">
                 <td scope="row">{{i + 1}}</td>
                 <td>{{state.state}}</td>
-                <td class="text-warning"><b>{{state.confirmed | number:'.0'}}</b></td>
-                <td class="text-primary"><b>{{state.active | number:'.0'}}</b></td>
-                <td class="text-success"><b>{{state.recovered | number:'.0'}}</b></td>
-                <td class="text-danger"><b>{{state.deaths | number:'.0'}}</b></td>
+                <td><b class="text-warning">{{state.confirmed | number:'.0'}}</b></td>
+                <td><b class="text-primary">{{state.active | number:'.0'}}</b></td>
+                <td><b class="text-success">{{state.recovered | number:'.0'}}</b></td>
+                <td><b class="text-danger">{{state.deaths | number:'.0'}}</b></td>
             </tr>
         </tbody>
     </table>

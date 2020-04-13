@@ -13,8 +13,8 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  get(url) {
-    return this.http.get(url).pipe(
+  get(url, options?: any) {
+    return this.http.get(url, options).pipe(
       map(res => res),
       catchError(err => throwError(err))
     );

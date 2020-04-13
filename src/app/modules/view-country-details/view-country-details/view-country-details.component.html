@@ -1,5 +1,5 @@
 <!-- Breadcrumb -->
-<nav aria-label="breadcrumb">
+<nav aria-label="breadcrumb" class="mt-3">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a [routerLink]="['']">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{detailPage}}</li>
@@ -28,10 +28,10 @@
             <tr *ngFor="let detail of countryDetails; let i = index">
                 <td scope="row">{{i+1}}</td>
                 <td>{{detail.Date | date}}</td>
-                <td class="text-warning"><b>{{detail.Confirmed | number:'.0'}}</b></td>
-                <td class="text-primary"><b>{{detail.Active | number:'.0'}}</b></td>
-                <td class="text-success"><b>{{detail.Recovered | number:'.0'}}</b></td>
-                <td class="text-danger"><b>{{detail.Deaths | number:'.0'}}</b></td>
+                <td><b class="text-warning">{{detail.Confirmed | number:'.0'}}</b></td>
+                <td><b class="text-primary">{{detail.Active | number:'.0'}}</b></td>
+                <td><b class="text-success">{{detail.Recovered | number:'.0'}}</b></td>
+                <td><b class="text-danger">{{detail.Deaths | number:'.0'}}</b></td>
             </tr>
         </tbody>
     </table>
