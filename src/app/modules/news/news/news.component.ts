@@ -10,7 +10,9 @@ import { NewsRss } from 'src/app/shared/models/news-rss';
 })
 export class NewsComponent implements OnInit {
   rssData: NewsRss;
-  constructor(private newsService: NewsService) { }
+  constructor(
+    private newsService: NewsService
+  ) { }
 
   ngOnInit(): void {
     this.getWhoNews();
@@ -21,7 +23,6 @@ export class NewsComponent implements OnInit {
       const parseString = xml2js.parseString;
       parseString(res, (err, result: NewsRss) => {
         this.rssData = result;
-        console.log(this.rssData);
       });
     });
   }
