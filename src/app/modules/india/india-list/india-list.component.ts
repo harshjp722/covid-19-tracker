@@ -34,6 +34,7 @@ export class IndiaListComponent implements OnInit {
 
   viewDetails(state) {
     console.log(state, ' selected');
+    this.router.navigate(['india/', state]);
   }
 
 }

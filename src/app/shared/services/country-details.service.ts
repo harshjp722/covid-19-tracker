@@ -16,7 +16,7 @@ export class CountryDetailsService {
   }
 
   getCountryDetails(slug): Observable<any> {
-    return this.apiService.get(this.baseUrl + 'live/country/' + slug + '/status/confirmed');
+    return this.apiService.get(this.baseUrl + 'live/country/' + slug);
   }
 
   getCountryDetailsDummy(): Observable<any> {

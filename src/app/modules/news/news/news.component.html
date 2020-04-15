@@ -11,7 +11,7 @@
                     <a class="text-dark" href="{{o.link[0]}}" target="_blank">{{o.title[0]}}</a>
                 </h3>
                 <div class="mb-1 text-muted">{{o.pubDate[0].substr(0, 16)}}</div>
-                <p class="card-text mb-auto" [innerHTML]="o.description[0].substring(0, 255) + '...'"></p>
+                <p class="card-text mb-auto text-justify" [innerHTML]="o.description[0].substring(0, 255) + '...'"></p>
                 <a href="{{o.link[0]}}">Continue reading</a>
             </div>
             <!-- <img class="card-img-right flex-auto d-none d-md-block" alt="Thumbnail [200x250]"

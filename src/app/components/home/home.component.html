@@ -1,62 +1,24 @@
-<!-- Dummy Data Alert -->
-<div *ngIf="isDummyData" class="alert alert-warning">
-    <span>You are viewing Dummy data due to over usage of API!</span>
+<h2 class="mt-4 text-muted">
+    How to fight against Corona?
+</h2>
+
+<div class="iframe-container">
+    <iframe src="https://www.youtube.com/embed/O9Zyrd_vLqo" frameborder="0" allowfullscreen
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframe-content"></iframe>
 </div>
 
-<!-- Covid-19 Summary -->
-<div *ngIf="trackerSummary" class="card-container">
-    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
-        <span>Total Confirmed: <b>{{trackerSummary.TotalConfirmed | number:'.0'}}</b></span>
+<div class="about_corona" id="abt">
+    <div class="symptoms">
+        <img src="https://www.mygov.in/sites/all/themes/mygov/images/covid/symptoms.png" alt="" title="">
     </div>
-
-    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
-        <span>Total Recovered: <b>{{trackerSummary.TotalRecovered | number:'.0'}}</b></span>
-    </div>
-
-    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
-        <span>Total Deceased: <b>{{trackerSummary.TotalDeaths | number:'.0'}}</b></span>
-    </div>
-
-    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
-        <span>New Confirmed: <b>{{trackerSummary.NewConfirmed | number:'.0'}}</b></span>
-    </div>
-
-    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
-        <span>New Recovered: <b>{{trackerSummary.NewRecovered | number:'.0'}}</b></span>
-    </div>
-
-    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
-        <span>New Deceased: <b>{{trackerSummary.NewDeaths | number:'.0'}}</b></span>
+    <div class="corona_right">
+        <div class="spread">
+            <h3>How it Spreads</h3>
+            <img src="https://www.mygov.in/sites/all/themes/mygov/images/covid/block-one.png" alt="" title="">
+        </div>
+        <div class="prevention">
+            <h3>PREVENTION</h3>
+            <img src="https://www.mygov.in/sites/all/themes/mygov/images/covid/block-two.png" alt="" title="">
+        </div>
     </div>
 </div>
-
-<!-- Report By Country -->
-<div *ngIf="trackerReport" class="table-responsive">
-    <table class="table table-striped" id="covid19Report">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col" data-card-title>#</th>
-                <th scope="col" data-card-title>Country</th>
-                <th scope="col">Confirmed</th>
-                <th scope="col">Active</th>
-                <th scope="col">Recovered</th>
-                <th scope="col">Deceased</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let country of pagedItems; let i = index" style="cursor: pointer;"
-                (click)="viewCountryDetails(country)">
-                <td scope="row">{{country.rowNumber}}</td>
-                <td><a routerLink="/country/{{country.Slug}}">{{country.Country}}</a></td>
-                <td><b class="text-warning">{{country.TotalConfirmed | number:'.0'}}</b></td>
-                <td><b class="text-primary">{{country.Active | number:'.0'}}</b></td>
-                <td><b class="text-success">{{country.TotalRecovered | number:'.0'}}</b></td>
-                <td><b class="text-danger">{{country.TotalDeaths | number:'.0'}}</b></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<nav aria-label="Covid-19 Report Pager">
-    <app-pagination [items]="trackerReport" (changePage)="onChangePage($event)"></app-pagination>
-</nav>

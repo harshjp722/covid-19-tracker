@@ -9,9 +9,9 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'country/:slug',
-    loadChildren: () => import('./modules/view-country-details/view-country-details.module')
-      .then(m => m.ViewCountryDetailsModule)
+    path: 'world-o-meter',
+    loadChildren: () => import('./modules/world-ometer/world-ometer.module')
+      .then(m => m.WorldOMeterModule)
   },
   {
     path: 'india',

@@ -18,4 +18,8 @@ export class IndiaService {
   getSummary(): Observable<any> {
     return this.apiService.get(this.baseUrl + 'data.json');
   }
+
+  getStateWiseConfirmed(): Observable<any> {
+    return this.apiService.get(this.baseUrl + 'v2/state_district_wise.json');
+  }
 }

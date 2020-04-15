@@ -1,98 +1,44 @@
 [
-    {
-      "Country": "India",
-      "CountryCode": "IN",
-      "Lat": "20.59",
-      "Lon": "78.96",
-      "Confirmed": 3082,
-      "Deaths": 86,
-      "Recovered": 229,
-      "Active": 2767,
-      "Date": "2020-04-04T00:00:00Z",
-      "LocationID": "6a828e02-a8cb-44e4-ae55-f6b1fc61c274"
-    },
-    {
-      "Country": "India",
-      "CountryCode": "IN",
-      "Lat": "20.59",
-      "Lon": "78.96",
-      "Confirmed": 3588,
-      "Deaths": 86,
-      "Recovered": 229,
-      "Active": 3273,
-      "Date": "2020-04-05T00:00:00Z",
-      "LocationID": "6a828e02-a8cb-44e4-ae55-f6b1fc61c274"
-    },
-    {
-      "Country": "India",
-      "CountryCode": "IN",
-      "Lat": "20.59",
-      "Lon": "78.96",
-      "Confirmed": 4288,
-      "Deaths": 117,
-      "Recovered": 328,
-      "Active": 3843,
-      "Date": "2020-04-06T00:00:00Z",
-      "LocationID": "6a828e02-a8cb-44e4-ae55-f6b1fc61c274"
-    },
-    {
-      "Country": "India",
-      "CountryCode": "IN",
-      "Lat": "20.59",
-      "Lon": "78.96",
-      "Confirmed": 4778,
-      "Deaths": 136,
-      "Recovered": 375,
-      "Active": 4267,
-      "Date": "2020-04-07T00:00:00Z",
-      "LocationID": "6a828e02-a8cb-44e4-ae55-f6b1fc61c274"
-    },
-    {
-      "Country": "India",
-      "CountryCode": "IN",
-      "Lat": "20.59",
-      "Lon": "78.96",
-      "Confirmed": 5311,
-      "Deaths": 150,
-      "Recovered": 421,
-      "Active": 4740,
-      "Date": "2020-04-08T00:00:00Z",
-      "LocationID": "6a828e02-a8cb-44e4-ae55-f6b1fc61c274"
-    },
-    {
-      "Country": "India",
-      "CountryCode": "IN",
-      "Lat": "20.59",
-      "Lon": "78.96",
-      "Confirmed": 5916,
-      "Deaths": 178,
-      "Recovered": 506,
-      "Active": 5232,
-      "Date": "2020-04-09T00:00:00Z",
-      "LocationID": "6a828e02-a8cb-44e4-ae55-f6b1fc61c274"
-    },
-    {
-      "Country": "India",
-      "CountryCode": "IN",
-      "Lat": "20.59",
-      "Lon": "78.96",
-      "Confirmed": 6725,
-      "Deaths": 226,
-      "Recovered": 620,
-      "Active": 5879,
-      "Date": "2020-04-10T00:00:00Z",
-      "LocationID": "6a828e02-a8cb-44e4-ae55-f6b1fc61c274"
-    },
-    {
-      "Country": "India",
-      "CountryCode": "IN",
-      "Lat": "20.59",
-      "Lon": "78.96",
-      "Confirmed": 7600,
-      "Deaths": 249,
-      "Recovered": 774,
-      "Active": 6577,
-      "Date": "2020-04-11T00:00:00Z",
-      "LocationID": "6a828e02-a8cb-44e4-ae55-f6b1fc61c274"
-    }
-  ]
+  {
+    "Country": "India",
+    "CountryCode": "IN",
+    "Province": "",
+    "City": "",
+    "CityCode": "",
+    "Lat": "20.59",
+    "Lon": "78.96",
+    "Confirmed": 9240,
+    "Deaths": 331,
+    "Recovered": 1096,
+    "Active": 7813,
+    "Date": "2020-04-13T00:00:00Z"
+  },
+  {
+    "Country": "India",
+    "CountryCode": "IN",
+    "Province": "",
+    "City": "",
+    "CityCode": "",
+    "Lat": "20.59",
+    "Lon": "78.96",
+    "Confirmed": 10453,
+    "Deaths": 358,
+    "Recovered": 1181,
+    "Active": 8914,
+    "Date": "2020-04-14T00:00:00Z"
+  },
+  {
+    "Country": "India",
+    "CountryCode": "IN",
+    "Province": "",
+    "City": "",
+    "CityCode": "",
+    "Lat": "20.59",
+    "Lon": "78.96",
+    "Confirmed": 11487,
+    "Deaths": 393,
+    "Recovered": 1359,
+    "Active": 9735,
+    "Date": "2020-04-15T00:00:00Z"
+  }
+]

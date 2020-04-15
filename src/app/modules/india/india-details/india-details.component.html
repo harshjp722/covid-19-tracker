@@ -1,0 +1,27 @@
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/india']">India Tracker</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{detailPage}}</li>
+    </ol>
+</nav>
+
+<!-- State Details -->
+<div *ngIf="stateDetails" class="table-responsive">
+    <table class="table table-striped" id="covid19Report">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" data-card-title>#</th>
+                <th scope="col" data-card-title>District</th>
+                <th scope="col">Confirmed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detail of stateDetails; let i = index">
+                <td scope="row">{{i+1}}</td>
+                <td>{{detail.district}}</td>
+                <td><b class="text-warning">{{detail.confirmed | number:'.0'}}</b></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

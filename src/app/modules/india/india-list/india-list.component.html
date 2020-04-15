@@ -29,9 +29,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let state of trackerReport; let i = index" style="cursor: pointer;"
-                (click)="viewDetails(state)">
+                (click)="viewDetails(state.state)">
                 <td scope="row">{{i + 1}}</td>
-                <td>{{state.state}}</td>
+                <td><a routerLink="/india/{{state.state}}">{{state.state}}</a></td>
                 <td><b class="text-warning">{{state.confirmed | number:'.0'}}</b></td>
                 <td><b class="text-primary">{{state.active | number:'.0'}}</b></td>
                 <td><b class="text-success">{{state.recovered | number:'.0'}}</b></td>

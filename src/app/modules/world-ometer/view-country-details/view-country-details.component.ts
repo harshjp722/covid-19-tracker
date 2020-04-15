@@ -1,4 +1,4 @@
-import { CountryDetailsService } from './../../../shared/services/country-details.service';
+import { CountryDetailsService } from '../../../shared/services/country-details.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -26,7 +26,7 @@ export class ViewCountryDetailsComponent implements OnInit {
     this.countryDetailsService.getCountryDetails(slug).subscribe(res => {
       if (res) {
         this.isDummyData = false;
-        if (slug === 'united-states') {
+        if (res.length >= 7) {
           this.groupResponseByDate(res);
         } else {
           this.countryDetails = res;

@@ -10,11 +10,14 @@ import { HomeComponent } from './components/home/home.component';
 import { ConfigModule } from './shared/services/base/config.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UtilitiesModule } from './modules/utilities/utilities.module';
+import { ChartsModule } from 'ng2-charts';
+import { BoxWidthDirective } from './shared/directives/box-width.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BoxWidthDirective
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { UtilitiesModule } from './modules/utilities/utilities.module';
     AngularMaterialModule,
     HttpClientModule,
     LayoutModule,
-    UtilitiesModule
+    UtilitiesModule,
+    ChartsModule
   ],
   providers: [
     ConfigModule.init()
