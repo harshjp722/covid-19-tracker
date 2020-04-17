@@ -6,8 +6,20 @@
     </ol>
 </nav>
 
+<!-- State Pie chart -->
+<h2 class="mt-4 text-muted">
+    {{stateChart.title}}
+</h2>
+
+<div *ngIf="showStateChart">
+    <google-chart [type]="stateChart.type" [data]="stateChart.data" 
+    [columnNames]="stateChart.columnNames" [options]="stateChart.options" class="heatmap">
+    </google-chart>
+    <!-- <div id="indiaChartDiv" class="heatmap"></div> -->
+</div>
+
 <!-- State Details -->
-<div *ngIf="stateDetails" class="table-responsive">
+<div *ngIf="stateDetails" class="table-responsive mt-4">
     <table class="table table-striped" id="covid19Report">
         <thead class="thead-dark">
             <tr>
