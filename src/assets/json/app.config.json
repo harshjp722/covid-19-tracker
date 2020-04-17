@@ -2,6 +2,6 @@
     "apiBasePath": "https://api.covid19api.com/",
     "indiaApiBasePath": "https://api.covid19india.org/",
     "initialPage": 1,
-    "recordsPerPage": 20,
+    "recordsPerPage": 30,
     "maxVisiblePages": 5
 }
