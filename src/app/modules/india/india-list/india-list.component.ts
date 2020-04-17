@@ -33,7 +33,21 @@ export class IndiaListComponent implements OnInit {
         this.trackerLastUpdated = this.trackerSummary.lastupdatedtime;
         this.trackerReport = res.statewise.filter(f => f.statecode !== 'TT');
         this.trackerReport.sort((a, b) => a.confirmed - b.confirmed).reverse();
+<<<<<<< HEAD
         this.setChartData(this.trackerReport);
+=======
+        let i = 0;
+        this.trackerReport.forEach(el => {
+          this.indiaChartData.push([
+            el.state,
+            { v: el.confirmed, f: this.decimalPipe.transform(el.confirmed, '.0') }
+          ]);
+          i++;
+          if (i === this.indiaChartData.length) {
+            this.loadIndiaMap(this.indiaChartData, ['State', 'Cases']);
+          }
+        });
+>>>>>>> 4fff146b75338cdfb4389bb7e6ffff6758068d59
       }
     });
   }
@@ -43,6 +57,7 @@ export class IndiaListComponent implements OnInit {
     this.router.navigate(['india/', state]);
   }
 
+<<<<<<< HEAD
   setChartData(dataSet) {
     let i = 0;
     dataSet.forEach(el => {
@@ -57,6 +72,8 @@ export class IndiaListComponent implements OnInit {
     });
   }
 
+=======
+>>>>>>> 4fff146b75338cdfb4389bb7e6ffff6758068d59
   loadIndiaMap(data, columnNames) {
     this.indiaChart.title = 'India Covid-19 Report';
     this.indiaChart.type = 'GeoChart';
