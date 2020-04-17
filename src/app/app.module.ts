@@ -27,7 +27,11 @@ import { DecimalPipe } from '@angular/common';
     HttpClientModule,
     LayoutModule,
     UtilitiesModule,
+<<<<<<< HEAD
     GoogleChartsModule
+=======
+    GoogleChartsModule.forRoot('AIzaSyAlXc5tff5S-AGjiQfNU7eDGS7Rf7VgQ9I')
+>>>>>>> 4fff146b75338cdfb4389bb7e6ffff6758068d59
   ],
   providers: [
     ConfigModule.init(),
