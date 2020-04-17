@@ -30,8 +30,7 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "src/assets/js/tableToCards.js",
-              "node_modules/chart.js/dist/Chart.js"
+              "src/assets/js/tableToCards.js"
             ]
           },
           "configurations": {

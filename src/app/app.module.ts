@@ -2,7 +2,6 @@ import { LayoutModule } from './modules/layout/layout.module';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,8 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ConfigModule } from './shared/services/base/config.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UtilitiesModule } from './modules/utilities/utilities.module';
-import { ChartsModule } from 'ng2-charts';
 import { BoxWidthDirective } from './shared/directives/box-width.directive';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { DecimalPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -27,10 +27,11 @@ import { BoxWidthDirective } from './shared/directives/box-width.directive';
     HttpClientModule,
     LayoutModule,
     UtilitiesModule,
-    ChartsModule
+    GoogleChartsModule.forRoot('AIzaSyAlXc5tff5S-AGjiQfNU7eDGS7Rf7VgQ9I')
   ],
   providers: [
-    ConfigModule.init()
+    ConfigModule.init(),
+    DecimalPipe
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

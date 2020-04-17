@@ -40,3 +40,15 @@
         </tbody>
     </table>
 </div>
+
+<!-- India Geochart -->
+<h2 class="mt-4 text-muted">
+    {{indiaChart.title}}
+</h2>
+
+<div *ngIf="showIndiaChart">
+    <google-chart [title]="indiaChart.title" [type]="indiaChart.type" [data]="indiaChart.data" 
+    [columnNames]="indiaChart.columnNames" [options]="indiaChart.options" class="heatmap">
+    </google-chart>
+    <!-- <div id="indiaChartDiv" class="heatmap"></div> -->
+</div>

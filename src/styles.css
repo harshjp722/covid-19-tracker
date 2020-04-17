@@ -289,3 +289,8 @@
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.heatmap {
+  width: 100% !important;
+  height: 100%;
+}
