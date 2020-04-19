@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   chartData: any[] = [];
   showChart = false;
   isDummyData = false;
+  trackerSummary: any;
 
   constructor(
     private homeService: HomeService,
@@ -52,14 +53,8 @@ export class HomeComponent implements OnInit {
     this.homeService.getSummary().subscribe(res => {
       if (res && res.Global) {
         this.isDummyData = false;
-        let i = 0;
-        res.Countries.forEach(f => {
-          this.chartData.push([f.CountryCode, { v: f.TotalConfirmed, f: this.decimalPipe.transform(f.TotalConfirmed, '.0') }]);
-          i++;
-          if (i === res.Countries.length) {
-            this.loadWorldMap(this.chartData, ['Country', 'Cases']);
-          }
-        });
+        this.trackerSummary = res.Global;
+        this.setChartData(res);
         // this.chartData.sort((a, b) => a.confirmed - b.confirmed).reverse();
       } else {
         this.getSummaryDummyData();
@@ -74,15 +69,27 @@ export class HomeComponent implements OnInit {
     this.homeService.getSummaryDummy().subscribe(res => {
       if (res) {
         this.isDummyData = true;
-        let i = 0;
-        res.Countries.forEach(f => {
-          this.chartData.push([f.CountryCode, { v: f.TotalConfirmed, f: this.decimalPipe.transform(f.TotalConfirmed, '.0') }]);
-          i++;
-          if (i === res.Countries.length) {
-            this.loadWorldMap(this.chartData, ['Country', 'Cases']);
-          }
-        });
+        this.trackerSummary = res.Global;
+        this.setChartData(res);
         // this.chartData.sort((a, b) => a.confirmed - b.confirmed).reverse();
+      }
+    });
+  }
+
+  setChartData(data) {
+    let i = 0;
+    data.Countries.forEach(f => {
+      this.chartData.push([
+        f.CountryCode,
+        f.Country,
+        {
+          v: f.TotalConfirmed,
+          f: this.decimalPipe.transform(f.TotalConfirmed, '.0').toString()
+        }
+      ]);
+      i++;
+      if (i === data.Countries.length) {
+        this.loadWorldMap(this.chartData, ['Country Code', 'Country', 'Cases']);
       }
     });
   }

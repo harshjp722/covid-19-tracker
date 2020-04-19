@@ -44,15 +44,26 @@ export class IndiaListComponent implements OnInit {
   }
 
   setChartData(dataSet) {
+    // dataSet = dataSet.filter(f => f.statecode !== 'TG'
+    //   && f.statecode !== 'OR'
+    //   && f.statecode !== 'UT'
+    //   && f.statecode !== 'LA'
+    //   && f.statecode !== 'PY'
+    //   && f.statecode !== 'DN');
     let i = 0;
     dataSet.forEach(el => {
       this.indiaChartData.push([
-        el.state,
+        'IN-' + el.statecode,
+        // el.state,
         { v: el.confirmed, f: this.decimalPipe.transform(el.confirmed, '.0') }
       ]);
       i++;
       if (i === this.indiaChartData.length) {
-        this.loadIndiaMap(this.indiaChartData, ['State', 'Cases']);
+        this.loadIndiaMap(this.indiaChartData, [
+          'State Code',
+          // 'State', 
+          'Cases'
+        ]);
       }
     });
   }
@@ -80,22 +91,22 @@ export class IndiaListComponent implements OnInit {
       //   // '#e35626',
       //   '#e0440e'
       // ],
-      // colorAxis: {
-      //   colors: [
-      //     '#ffffff',
-      //     // '#fbece6',
-      //     '#f8d9ce',
-      //     // '#f5c6b6',
-      //     '#f2b49e',
-      //     // '#efa186',
-      //     '#ec8e6e',
-      //     // '#e97c56',
-      //     '#e6693e',
-      //     // '#e35626',
-      //     '#e0440e'
-      //   ]
-      // },
-      colorAxis: { colors: ['#e7711c', '#4374e0'] }
+      colorAxis: {
+        colors: [
+          '#ffffff',
+          // '#fbece6',
+          '#f8d9ce',
+          // '#f5c6b6',
+          '#f2b49e',
+          // '#efa186',
+          '#ec8e6e',
+          // '#e97c56',
+          '#e6693e',
+          // '#e35626',
+          '#e0440e'
+        ]
+      },
+      // colorAxis: { colors: ['#e7711c', '#4374e0'] }
       // backgroundColor: '#81d4fa',
       // is3D: true
     };

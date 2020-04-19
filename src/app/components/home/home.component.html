@@ -2,6 +2,33 @@
     <a routerLink="/world-o-meter" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{chart.title}}</a>
 </h2>
 
+<!-- Covid-19 Summary -->
+<div *ngIf="trackerSummary" class="card-container">
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
+        <span>Total Confirmed: <b>{{trackerSummary.TotalConfirmed | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
+        <span>Total Recovered: <b>{{trackerSummary.TotalRecovered | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
+        <span>Total Deceased: <b>{{trackerSummary.TotalDeaths | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
+        <span>New Confirmed: <b>{{trackerSummary.NewConfirmed | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
+        <span>New Recovered: <b>{{trackerSummary.NewRecovered | number:'.0'}}</b></span>
+    </div>
+
+    <div class="col-md-3 col-auto cardCustom bg-dark text-white">
+        <span>New Deceased: <b>{{trackerSummary.NewDeaths | number:'.0'}}</b></span>
+    </div>
+</div>
+
 <div *ngIf="showChart">
     <google-chart [title]="chart.title" [type]="chart.type" [data]="chart.data" 
     [columnNames]="chart.columnNames" [options]="chart.options" class="heatmap">
@@ -9,13 +36,8 @@
 </div>
 
 <h2 class="mt-4 text-muted">
-    How to fight against Corona?
+    <a href="https://www.covid19india.org/" target="_blank">How to fight against Corona?</a>
 </h2>
-
-<div class="iframe-container">
-    <iframe src="https://www.youtube.com/embed/O9Zyrd_vLqo" frameborder="0" allowfullscreen
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframe-content"></iframe>
-</div>
 
 <div class="about_corona" id="abt">
     <div class="symptoms">
@@ -31,4 +53,9 @@
             <img src="https://www.mygov.in/sites/all/themes/mygov/images/covid/block-two.png" alt="" title="">
         </div>
     </div>
+</div>
+
+<div class="iframe-container">
+    <iframe src="https://www.youtube.com/embed/O9Zyrd_vLqo" frameborder="0" allowfullscreen
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframe-content"></iframe>
 </div>
