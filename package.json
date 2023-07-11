@@ -23,7 +23,7 @@
     "@angular/router": "~9.1.1",
     "angular-google-charts": "^0.1.6",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "rxjs": "~6.5.4",
     "stream": "0.0.2",
     "timers": "^0.1.1",
